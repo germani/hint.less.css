@@ -1,2 +1,5 @@
 # hint.less.css
-hint less 
+repo - https://github.com/chinchang/hint.css - scss
+
+
+
