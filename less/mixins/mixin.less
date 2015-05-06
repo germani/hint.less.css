@@ -1,0 +1,80 @@
+.transition(@transition) {
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  -o-transition: @transition;
+  transition: @transition;
+}
+.opacity(@opacity) {
+  opacity: @opacity / 100;
+  filter: ~"alpha(opacity=@{opacity})";
+}
+
+.transition-delay(@delay) {
+  -webkit-transition-delay: @delay;
+  -moz-transition-delay: @delay;
+  transition-delay: @delay;
+}
+
+.translate3d(@x, @y, @z) {
+  -webkit-transform: translate3d(@x, @y, @z);
+  -moz-transform: translate3d(@x, @y, @z);
+  -o-transform: translate3d(@x, @y, @z);
+  transform: translate3d(@x, @y, @z);
+}
+
+.translateX(@x) {
+  -webkit-transform: translateX(@x);
+  -moz-transform: translateX(@x);
+  -o-transform: translateX(@x);
+  transform: translateX(@x);
+}
+
+.translateY(@x) {
+  -webkit-transform: translateY(@x);
+  -moz-transform: translateY(@x);
+  -o-transform: translateY(@x);
+  transform: translateY(@x);
+}
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.transition-duration(@transition-duration) {
+  -webkit-transition-duration: @transition-duration;
+  -moz-transition-duration: @transition-duration;
+  -o-transition-duration: @transition-duration;
+  transition-duration: @transition-duration;
+}
+
+.transform(@transforms) {
+  -moz-transform: @transforms;
+  -o-transform: @transforms;
+  -ms-transform: @transforms;
+  -webkit-transform: @transforms;
+  transform: @transforms;
+}
+
+.keyframes(@name; @arguments) {
+  @-moz-keyframes @name { @arguments(); }
+  @-webkit-keyframes @name { @arguments(); }
+  @keyframes @name { @arguments(); }
+}
+
+.animation(@arguments) {
+  -webkit-animation: @arguments;
+  -moz-animation: @arguments;
+  animation: @arguments;
+}
+
+.vendor(@property, @value, @vendors...) {
+  .loop-vendors(@vendorCount) when (@vendorCount > 0){ // for loop for creating the req prefixes
+    .loop-vendors(@vendorCount - 1); // call the next iteration
+    @vendor: extract(@vendors, @vendorCount); //extract the value from vendors list based on loop index
+    -@{vendor}-@{property}: @value; // populate the vendor specific versions.
+  }
+  .loop-vendors(length(@vendors)); // call the loop based on length of vendors list
+
+  @{property}: @value; //populate the official value finally
+}
