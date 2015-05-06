@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hint.less.css - A tooltip library in CSS</title>
+    <meta name="description" content="A tooltip library in CSS">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/hint.css">
+  </head>
+
+
+  <body data-twttr-rendered="true" cz-shortcut-listen="true">
+  	<header>
+  		<h1 class="title">HINT.less.css</h1>
+		  <h3>A tooltip library in CSS for your lovely websites</h3>
+  	</header>
+
+  	<div class="main-container">
+
+      <section class="section  section--what">
+    		<h2 class="section__title">
+          W
+          H
+          A
+          T
+    		</h2>
+    		<p>
+          <strong>Hint.less.css</strong> is a tooltip library written in LESS which uses only HTML/CSS to create simple tooltips.
+        </p>
+
+        <p>
+          It does not rely on any JavaScript and rather uses <strong>data-* attribute</strong>, <strong>pseudo elements</strong>, <strong>content property</strong> and <strong>CSS3 transitions</strong> to create the tooltips. Also it uses <strong>BEM</strong> naming convention particularly for the modifiers.
+        </p>
+
+        <p>
+          <a href="https://github.com/germani/hint.less.css" class="btn">Download Hint.less.css from Github <small>(v1.0.0)</small></a>
+        </p>
+
+    	</section>
+
+
+    	<section class="section  section--examples">
+    		<h2 class="section__title">E
+    		X
+    		A
+    		M
+    		P
+    		L
+    		E
+    		S
+    		</h2>
+
+        <h3>Basic ones</h3>
+    		<p>
+					<a href="javascript:void(0)" class="hint--top" data-hint="Yeah, I am &gt;:D">Look, there is something over me.</a>
+				</p>
+
+				<p>
+					<a href="javascript:void(0)" class="hint--right" data-hint="Are you sure you are?">I am always right!</a>
+				</p>
+
+				<p>
+					<a href="javascript:void(0)" class="hint--bottom" data-hint="Sure. Cheers!">How about a bottoms up?</a>
+				</p>
+
+				<p>
+					<a href="javascript:void(0)" class="hint--left" data-hint="LEFT-over Sir...">What do we get now?</a></p>
+
+        <h3>On dimensioned elements</h3>
+
+				<p><a class="hint--right" data-hint="Pika pika!" href="javascript:void(0)"><img src="./style/pikachu.jpg"></a>
+				</p>
+
+        <h3>Color based types</h3>
+
+				<p>
+					<a href="javascript:void(0)" class="hint--top  hint--error" data-hint="This is an error tooltip">Oh man! You are gonna self-destruct in 5 sec.</a>
+				</p>
+
+				<p>
+					<a href="javascript:void(0)" class="hint--left  hint--warning" data-hint="This is a warning tooltip">You did something wrong!</a>
+				</p>
+
+				<p>
+					<a href="javascript:void(0)" class="hint--bottom  hint--info" data-hint="This is an info tooltip">You can use different classes for different types of tooltips.</a>
+				</p>
+
+				<p>
+					<a href="javascript:void(0)" class="hint--left  hint--success" data-hint="This is a success tooltip">Hurray! You have seen all 4 context types.</a>
+				</p>
+
+        <h3>Extra</h3>
+
+				<p>
+					<a href="javascript:void(0)" class="hint--right  hint--always" data-hint="...which always keep showing">You can also make tooltips...</a>
+				</p>
+
+        <p>
+          <a class="hint--right  hint--success  hint--rounded" data-hint="We have rounded corners for you">Hmm...So you don't like sharp edges?</a>
+        </p>
+
+        <h3>Effects</h3>
+        <p>
+          <a href="javascript:void(0)" class="hint--top  hint--no-animate" data-hint="Simple show/hide tooltips with &#39;hint--no-animate&#39; class">Want no animations?</a>
+        </p>
+
+
+
+    	</section>
+
+      <section class="section  section--how">
+        <h2 class="section__title">U
+        S
+        A
+        G
+        E
+        </h2>
+
+        <p>
+          First get the library from the <a href="https://github.com/germani/hint.less.css">github repo</a>. Then in your HTML include the library CSS:
+          <!-- <pre>&lt;link rel="stylesheet" href="/hint.css"&gt;</pre> -->
+
+          </p><div class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">&lt;</span><span class="nt">link</span> <span class="nt">rel</span><span class="o">=</span><span class="s2">"stylesheet"</span> <span class="nt">href</span><span class="o">=</span><span class="s2">"hint.css"</span><span class="o">&gt;</span></code></pre></div>
+        <p></p>
+
+        <p>
+          Any element on your page which needs to have a tooltip has to be given at least one of the position classes: <code>hint--top</code>, <code>hint--bottom</code>, <code>hint--left</code>, <code>hint--right</code> to position the tooltip.
+
+          </p><div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">Hello</span> <span class="nt">Sir</span><span class="o">,</span> <span class="o">&lt;</span><span class="nt">span</span> <span class="nt">class</span><span class="o">=</span><span class="s2">"hint--bottom"</span><span class="o">&gt;</span><span class="nt">hover</span> <span class="nt">over</span> <span class="nt">me</span><span class="o">.&lt;/</span><span class="nt">span</span><span class="o">&gt;</span></code></pre></div>
+        <p></p>
+
+        <p>
+          And the tooltip text has to be given using the <code>data-hint</code> attribute on that element.
+          </p><div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">Hello</span> <span class="nt">Sir</span><span class="o">,</span> <span class="o">&lt;</span><span class="nt">span</span> <span class="nt">class</span><span class="o">=</span><span class="s2">"hint--bottom"</span> <span class="nt">data-hint</span><span class="o">=</span><span class="s2">"Thank you!"</span><span class="o">&gt;</span><span class="nt">hover</span> <span class="nt">over</span> <span class="nt">me</span><span class="o">.&lt;/</span><span class="nt">span</span><span class="o">&gt;</span></code></pre></div>
+        <p></p>
+
+        <p>
+          <em>Result</em>:
+          Hello Sir, <span class="hint--bottom" data-hint="Thank you!"><strong>hover over me</strong></span>.
+        </p>
+
+       
+      </section>
+
+</div><!-- END .main-container -->
+
+   
+
+    <!-- github ribbon -->
+
+    <a class="github-ribbon" href="https://github.com/germani/hint.less.css"><img style="position: fixed; top: 0; right: 0; border: 0;" src="style/forkme.png" alt="Fork me on GitHub"></a>
+
+
+    <footer>
+        Written by <a class="my-name" href="https://facebook.com/mirotincev">Дмитрий Миротинцев</a> <a class="" href="http://blog.f1e.ru">See more experiments</a>
+    </footer>
+</body>
+</html>  
